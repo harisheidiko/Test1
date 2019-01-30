@@ -1,0 +1,591 @@
+When Commit edited:
+#['**New commit updated** to project **'+flowVars['response']['hookResponse']['repository']['project']['name']+'** in repository ['+flowVars['response']['hookResponse']['repository']['slug']+']('+flowVars['response']['hookResponse']['repository']['links']['self'][0]['href']+') by '+flowVars['response']['hookResponse']['actor']['username']+'']
+#['**New commit updated** to project **'+flowVars['response']['hookResponse']['repository']['project']['name']+'** in repository **'+flowVars['response']['hookResponse']['repository']['fullName']+'** by '+flowVars['response']['hookResponse']['actor']['username']+'']
+
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	},
+	"push": {
+		"changes": [{
+			"created": false,
+			"closed": false,
+			"new": {
+				"type": "branch",
+				"name": "master",
+				"target": {
+					"type": "commit",
+					"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+				}
+			},
+			"old": {
+				"type": "branch",
+				"name": "master",
+				"target": {
+					"type": "commit",
+					"hash": "40774f4312841e6048ebb51aa640cc034d690f97"
+				}
+			}
+		}]
+	}
+}
+============================
+When Branch Created:
+#['**'+flowVars['response']['hookResponse']['push']['changes'][0]['new']['name']+' branch** to project **'+flowVars['response']['hookResponse']['repository']['project']['name']+'** in repository **'+flowVars['response']['hookResponse']['repository']['fullName']+'** by '+flowVars['response']['hookResponse']['actor']['username']+'']
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	},
+	"push": {
+		"changes": [{
+			"created": true,
+			"closed": false,
+			"new": {
+				"type": "branch",
+				"name": "Testing",
+				"target": {
+					"type": "commit",
+					"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+				}
+			},
+			"old": null
+		}]
+	}
+}
+===========================================
+WHen Committed:
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/sandhya/BitBucketOnlinetxt-1491298279695"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	},
+	"push": {
+		"changes": [{
+			"created": true,
+			"closed": false,
+			"new": {
+				"type": "branch",
+				"name": "sandhya/BitBucketOnlinetxt-1491298279695",
+				"target": {
+					"type": "commit",
+					"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+				}
+			},
+			"old": null
+		}]
+	}
+}
+=============================================
+When Pull Craeted:
+
+#['**Pull request** [#'+flowVars['response']['hookResponse']['pullrequest']['id']+' : '+flowVars['response']['hookResponse']['pullrequest']['title']+']('+flowVars['response']['hookResponse']['pullrequest']['link']+') updated by  '+flowVars['response']['hookResponse']['pullrequest']['fromRef']['repository']['owner']['username']+' in repository ['+flowVars['response']['hookResponse']['repository']['project']['name']+']('+flowVars['response']['hookResponse']['repository']['links']['self'][0]['href']+') \n - Source : '+flowVars['response']['hookResponse']['pullrequest']['fromRef']['branch']['name']+' \n - Destination : '+flowVars['response']['hookResponse']['pullrequest']['toRef']['branch']['name']+'']
+
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"pullrequest": {
+		"id": "1",
+		"title": "BitBucketOnline.txt edited online with Bitbucket",
+		"link": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/pull-requests/1",
+		"authorLogin": "sandhya sudharshan",
+		"fromRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "398821837fa48c03ba5ba95c54f4bc95c5ade969",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "sandhya/BitBucketOnlinetxt-1491298279695",
+				"rawNode": "398821837fa48c03ba5ba95c54f4bc95c5ade969"
+			}
+		},
+		"toRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "master",
+				"rawNode": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+			}
+		}
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	}
+}
+================================================
+Pull Request edited:
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"pullrequest": {
+		"id": "1",
+		"title": "BitBucketOnline.txt edited online",
+		"link": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/pull-requests/1",
+		"authorLogin": "sandhya sudharshan",
+		"fromRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "398821837fa48c03ba5ba95c54f4bc95c5ade969",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "sandhya/BitBucketOnlinetxt-1491298279695",
+				"rawNode": "398821837fa48c03ba5ba95c54f4bc95c5ade969"
+			}
+		},
+		"toRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "master",
+				"rawNode": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+			}
+		}
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	}
+}
+=====================
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"pullrequest": {
+		"id": "1",
+		"title": "BitBucketOnline.txt edited online",
+		"link": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/pull-requests/1",
+		"authorLogin": "sandhya sudharshan",
+		"fromRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "398821837fa48c03ba5ba95c54f4bc95c5ade969",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "sandhya/BitBucketOnlinetxt-1491298279695",
+				"rawNode": "398821837fa48c03ba5ba95c54f4bc95c5ade969"
+			}
+		},
+		"toRef": {
+			"repository": {
+				"scmId": "git",
+				"project": {
+					"key": "~SANDHYA",
+					"name": "sandhya sudharshan"
+				},
+				"slug": "test_repo",
+				"links": {
+					"self": [{
+						"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+					}]
+				},
+				"public": false,
+				"owner": {
+					"username": "~SANDHYA",
+					"displayName": "~SANDHYA"
+				},
+				"fullName": "~SANDHYA/test_repo",
+				"ownerName": "~SANDHYA"
+			},
+			"commit": {
+				"message": null,
+				"date": null,
+				"hash": "0af55d444b5780509ac79311646f7f1f07b85aa2",
+				"authorTimestamp": 0
+			},
+			"branch": {
+				"name": "master",
+				"rawNode": "0af55d444b5780509ac79311646f7f1f07b85aa2"
+			}
+		}
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://192.168.3.121:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	}
+}
+=============================
+Brach Delte:
+{
+	"actor": {
+		"username": "sandhya",
+		"displayName": "sandhya sudharshan"
+	},
+	"repository": {
+		"scmId": "git",
+		"project": {
+			"key": "~SANDHYA",
+			"name": "sandhya sudharshan"
+		},
+		"slug": "test_repo",
+		"links": {
+			"self": [{
+				"href": "http://localhost:7990/users/sandhya/repos/test_repo/browse"
+			}]
+		},
+		"public": false,
+		"owner": {
+			"username": "~SANDHYA",
+			"displayName": "~SANDHYA"
+		},
+		"fullName": "~SANDHYA/test_repo",
+		"ownerName": "~SANDHYA"
+	},
+	"push": {
+		"changes": [{
+			"created": false,
+			"closed": true,
+			"new": null,
+			"old": {
+				"type": "branch",
+				"name": "Testing",
+				"target": {
+					"type": "commit",
+					"hash": "fc87d29cc6fa278b10423150cb86efce8e8a2c72"
+				}
+			}
+		}]
+	}
+}
+=====================================
+When Pull Request Decline:
+{
+	"hookResponse": {
+		"actor": {
+			"username": "Naseer",
+			"displayName": "Naseeruddin"
+		},
+		"pullrequest": {
+			"id": "1",
+			"title": "Integration",
+			"link": "http://192.168.1.92:7990/projects/CIS/repos/ciscorepo/pull-requests/1",
+			"authorLogin": "Naseeruddin",
+			"fromRef": {
+				"repository": {
+					"scmId": "git",
+					"project": {
+						"key": "CIS",
+						"name": "Cisco"
+					},
+					"slug": "ciscorepo",
+					"links": {
+						"self": [{
+							"href": "http://localhost:7990/projects/CIS/repos/ciscorepo/browse"
+						}]
+					},
+					"public": false,
+					"owner": {
+						"username": "CIS",
+						"displayName": "CIS"
+					},
+					"fullName": "CIS/ciscorepo",
+					"ownerName": "CIS"
+				},
+				"commit": {
+					"message": null,
+					"date": null,
+					"hash": "dd0047499b03ba94e1b0d5bb73eb51212e4f10b8",
+					"authorTimestamp": 0
+				},
+				"branch": {
+					"name": "Integration",
+					"rawNode": "dd0047499b03ba94e1b0d5bb73eb51212e4f10b8"
+				}
+			},
+			"toRef": {
+				"repository": {
+					"scmId": "git",
+					"project": {
+						"key": "CIS",
+						"name": "Cisco"
+					},
+					"slug": "ciscorepo",
+					"links": {
+						"self": [{
+							"href": "http://localhost:7990/projects/CIS/repos/ciscorepo/browse"
+						}]
+					},
+					"public": false,
+					"owner": {
+						"username": "CIS",
+						"displayName": "CIS"
+					},
+					"fullName": "CIS/ciscorepo",
+					"ownerName": "CIS"
+				},
+				"commit": {
+					"message": null,
+					"date": null,
+					"hash": "c86e4104657efbb50264da460b507403c539d63b",
+					"authorTimestamp": 0
+				},
+				"branch": {
+					"name": "master",
+					"rawNode": "c86e4104657efbb50264da460b507403c539d63b"
+				}
+			}
+		},
+		"repository": {
+			"scmId": "git",
+			"project": {
+				"key": "CIS",
+				"name": "Cisco"
+			},
+			"slug": "ciscorepo",
+			"links": {
+				"self": [{
+					"href": "http://localhost:7990/projects/CIS/repos/ciscorepo/browse"
+				}]
+			},
+			"public": false,
+			"owner": {
+				"username": "CIS",
+				"displayName": "CIS"
+			},
+			"fullName": "CIS/ciscorepo",
+			"ownerName": "CIS"
+		}
+	},
+	"userEvents": "{\"displayName\":\"\",\"webhookUrl\":\"https://cisco-spark-integration-management-new-dev.cloudhub.io/api/hooks/cd31fcf0-19c0-11e7-af89-0afb0075557e\",\"unauthmode\":true}",
+	"instanceDetails": {
+		"instanceId": 13474,
+		"integrationId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0M5N2Y4OGZhMjEzYWRiMWNlMzkwNmNjYWZhNDMwN2QxYWJkMWU0NzI1YmJhYTEzN2ZjMTlhYWRjZDE3ZDRhODNj",
+		"userId": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS9mMGU2OWMzYi1lMzU4LTQ3ZTUtODQyYy02MWMxMmRlNTVhY2Q",
+		"updatedDate": "2017-04-05T05:29:23",
+		"messageFormat": "bitbucket Bot :Hello...User",
+		"createdDate": "2017-04-05T05:29:23",
+		"status": "ACTIVE",
+		"channelId": "Y2lzY29zcGFyazovL3VzL1JPT00vZTMwNDFjNTAtNjgzZC0xMWU2LTgxYmYtYjEzZjcwZDM3N2Ri",
+		"configJson": "{\"displayName\":\"\",\"webhookUrl\":\"https://cisco-spark-integration-management-new-dev.cloudhub.io/api/hooks/cd31fcf0-19c0-11e7-af89-0afb0075557e\",\"unauthmode\":true}",
+		"instanceUuid": "cd31fcf0-19c0-11e7-af89-0afb0075557e"
+	}
+}
